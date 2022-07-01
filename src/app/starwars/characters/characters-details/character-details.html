@@ -1,0 +1,41 @@
+<a mat-button [routerLink]="['/characters']">
+    <mat-icon>arrow_back</mat-icon>
+    Back To Characters List
+  </a>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{character.name}}
+      </mat-card-title>
+    
+    </mat-card-header>
+    <mat-card-content>
+      <mat-grid-list cols="7" rowHeight="100px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Genero: </span>
+          <span class="mat-body">{{character.gender}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Altura: </span>
+          <span class="mat-body">{{character.height}}</span>
+        </mat-grid-tile>
+       
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Color de Cabello: </span>
+          <span class="mat-body">{{character.hair_color}}</span>
+        </mat-grid-tile>
+        
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Color de Ojos: </span>
+          <span class="mat-body">{{character.eye_color}}</span>
+        </mat-grid-tile>
+        
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong"># de Peliculas: </span>
+          <span class="mat-body">{{character.films.length}}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <app-films-table [films]="character.filmsData"></app-films-table>
+    </mat-card-content>
+  </mat-card>
+  

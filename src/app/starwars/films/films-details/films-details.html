@@ -1,0 +1,42 @@
+<a mat-button [routerLink]="['/films']">
+    <mat-icon>arrow_back</mat-icon>
+    Regresar
+  </a>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{film.title}}
+      </mat-card-title>
+      <mat-card-subtitle>{{film.director}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="mat-body">{{film.opening_crawl}}</p>
+      <mat-grid-list cols="5" rowHeight="100px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Episode</span>
+          <span class="mat-body">{{film.episode_id}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Release Date</span>
+          <span class="mat-body">{{film.release_date}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Director</span>
+          <span class="mat-body">{{film.director}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong">Producer</span>
+          <span class="mat-body">{{film.producer}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <span class="mat-body-strong"># of Characters</span>
+          <span class="mat-body">{{film.characters.length}}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <h3 class="mat-h3">Characters</h3>
+      <div class="table-container">
+        <app-characters-table [characters]="film.charactersData"></app-characters-table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
